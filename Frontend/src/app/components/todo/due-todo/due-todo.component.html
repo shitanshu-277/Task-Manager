@@ -1,0 +1,19 @@
+<mat-card class="todoCard" *ngFor="let todo of dueTodos;let i=index">
+    <div class="todo">
+        <mat-checkbox class="checkBox" (click)="onCheck(todo.taskID)"></mat-checkbox>
+        <div>
+            <mat-card-header>
+                <mat-card-title>{{todo.title}}</mat-card-title> 
+            </mat-card-header>
+            <mat-card-content [ngClass]="{'show':!showMoreClicked[i]}">
+                <p class="description" [ngClass]="{'showMore': !showMoreClicked[i]}">{{todo.description}}</p>
+                <a (click)="shortDescription(i)" class="link">{{!showMoreClicked[i]?"...show more":"show less..."}}</a>
+            </mat-card-content>
+        </div>
+    </div>
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onEdit(todo.taskID)"><mat-icon>edit</mat-icon><span>Edit</span></button>
+        <button mat-menu-item (click)="onDelete(todo.taskID)"><mat-icon>delete</mat-icon><span>Delete</span></button>
+    </mat-menu>
+</mat-card>

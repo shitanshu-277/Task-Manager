@@ -1,0 +1,15 @@
+<mat-card class="todoCard" *ngFor="let todo of noDueTodos;let todoNumber=index">
+  <div>
+    <mat-card-header>
+      <mat-card-title>{{todo.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content [ngClass]="{'show':!showMoreClicked[todoNumber]}">
+      <p class="description" [ngClass]="{'showMore': !showMoreClicked[todoNumber]}">{{todo.description}}</p>
+      <a (click)="shortDescription(todoNumber)" class="link">{{!showMoreClicked[todoNumber]?"...show more":"show less..."}}</a>
+    </mat-card-content>
+  </div>
+  <button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onDue(todo.taskID)"><mat-icon>edit</mat-icon><span>Due</span></button>
+  </mat-menu>
+</mat-card>

@@ -1,0 +1,30 @@
+<img src="../../../assets/images/login.avif" alt="" class="signupImage">
+<div class="signupDiv">
+    <mat-card class="card">
+        <form class="signupFormDiv" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <h2>Todo App</h2>
+            <mat-form-field class="formField">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Ex. Shitanshu@gmail.com" formControlName="username">
+                <mat-error *ngIf="!signupForm.get('username')?.valid && signupForm.get('username')?.touched">Please
+                    enter valid username</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="formField">
+                <mat-label>New Password</mat-label>
+                <input type="password" matInput placeholder="Ex. Shitanshu1234@" formControlName="newPassword">
+            </mat-form-field>
+
+            <mat-form-field class="formField">
+                <mat-label>Confirm Password</mat-label>
+                <input type="password" matInput placeholder="Ex. Shitanshu1234@" formControlName="confirmPassword">
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button>Signin</button>
+            <div class="loginDiv">
+                <p>Already registered ?</p>
+                <a routerLink="/login" class="loginLink">Login</a>
+            </div>
+        </form>
+    </mat-card>
+</div>

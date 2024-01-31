@@ -1,0 +1,41 @@
+<div class="todoDiv">
+  <img src="../../../assets/images/todo.webp" alt="" class="todoInputImage">
+  <div class="todoListDiv">
+    <h1 class="todosHeading">Todos</h1>
+    <div class="tabsDiv">
+      <mat-tab-group>
+        <mat-tab label="Due">
+          <app-due-todo [createdTodo]="todos" [due]="dueTodo" (completedTodo)="addCompletedTodo($event)"></app-due-todo>
+        </mat-tab>
+        <mat-tab label="Completed">
+          <app-completed-todo [todo]="completedTodo" (dueTodo)="addDueTodo($event)"></app-completed-todo>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+
+  <div class="todoInputDiv">
+    <div class="profileDiv">
+      <button mat-button [matMenuTriggerFor]="menu"><span class="material-icons md-18">account_circle</span></button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changePasswordDialog()">Change Password</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </div>
+
+    <form class="todoForm" [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="formField">
+        <mat-label>Enter todo Title</mat-label>
+        <input matInput placeholder="Ex. Angular Project" formControlName="title" maxlength="30">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+        <mat-label>Enter Description</mat-label>
+        <textarea matInput placeholder="Ex. I need to add more functionalties..."
+          formControlName="description"></textarea>
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button [disabled]="valid()" class="createButton">Create</button>
+    </form>
+  </div>
+</div>

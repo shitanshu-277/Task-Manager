@@ -1,0 +1,27 @@
+<img src="../../../assets/images/login.avif" alt="" class="loginImage">
+<div class="loginDiv">
+    <mat-card class="card">
+        <form class="loginFormDiv" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <h2>Login</h2>
+            <mat-form-field class="formField">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Ex. Shitanshu@gmail.com" formControlName="username">
+                <mat-error *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched">Please enter
+                    valid username</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="formField">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Ex. Shitanshu1234@" formControlName="password">
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button>Login</button>
+            <br>
+            <br>
+            <div>
+                <p>New to Todo App ?</p>
+                <a routerLink="/signup" class="signupLink">Create an Account</a>
+            </div>
+        </form>
+    </mat-card>
+</div>

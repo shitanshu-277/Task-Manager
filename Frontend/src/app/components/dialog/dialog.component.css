@@ -1,0 +1,10 @@
+.dialog{
+    width: 500px;
+}
+.formField{
+    text-align: center;
+    width: 100%;
+}
+.actions{
+    margin-left: 300px;
+}

@@ -1,0 +1,63 @@
+.todoDiv {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.todoListDiv {
+  padding: 40px;
+}
+
+.todoInputDiv {
+  padding-top: 15%;
+  min-width: 150px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.formField {
+  width: 100%;
+}
+
+.todoInputImage {
+  width: 100%;
+  position: fixed;
+}
+
+.todosHeading {
+  position: relative;
+  text-align: center;
+}
+
+.profileDiv {
+  position: absolute;
+  top: 0;
+  margin-top: 10px;
+  right: 0;
+}
+
+
+.mat-mdc-tab-group {
+  min-width: 500px;
+}
+
+.tabsDiv {
+  overflow: scroll;
+  max-height: 500px;
+}
+
+.material-icons.md-18 {
+  font-size: 48px;
+  color: black;
+}
+
+
+.mat-mdc-raised-button:disabled {
+  color: white;
+  background-color: rgb(68, 68, 68);
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  color: white;
+  background-color: rgb(0, 0, 0);
+}

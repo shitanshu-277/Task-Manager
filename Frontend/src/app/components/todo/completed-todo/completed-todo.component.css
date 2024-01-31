@@ -1,0 +1,36 @@
+.todoCard {
+  max-width: 550px;
+  word-wrap: break-word;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.showMore {
+  height: 20px;
+  overflow: hidden;
+}
+
+.show{
+  display: flex;
+  width: 420px;
+}
+
+.link{
+  color: blue;
+  cursor: pointer;
+}
+
+.description{
+  max-width: 330px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+}
+.showDescription{
+  max-width: 400px;
+}

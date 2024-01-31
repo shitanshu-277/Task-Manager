@@ -1,0 +1,35 @@
+.todoCard {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkBox {
+  margin: 0 12px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+}
+
+.description{
+  max-width: 350px;
+  word-wrap: break-word;
+}
+
+.showMore {
+  height: 20px;
+  overflow: hidden;
+}
+
+.show{
+  display: flex;
+}
+
+.link{
+  color: blue;
+  cursor: pointer;
+}

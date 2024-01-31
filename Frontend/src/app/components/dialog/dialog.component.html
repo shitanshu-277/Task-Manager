@@ -1,0 +1,18 @@
+<div class="dialog">
+<div mat-dialog-content>
+  <h2>Edit Todo</h2>
+  <mat-form-field class="formField">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="data.title" required> 
+  </mat-form-field>
+  <br>
+  <mat-form-field class="formField">
+    <mat-label>Description</mat-label>
+    <input matInput [(ngModel)]="data.description" required> 
+  </mat-form-field>
+</div>
+<div class="actions" mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="{title:data.title,description:data.description}" [disabled]="valid()">Ok</button>
+</div>
+</div>

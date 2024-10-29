@@ -1,11 +1,11 @@
 global.con = require('./sql_connection.js')
+require('dotenv').config();
 const express = require('express');
 var cors = require("cors");
 const cookieParser = require('cookie-parser');
 const session=require('express-session');
 const app=express();
 app.use(cookieParser())
-const PORT=3000;
 app.use(cors({
     origin: ["http://localhost:4200"],
     credentials:true
@@ -33,6 +33,6 @@ app.use(session({
 app.use('/user',userRoutes);
 app.use('/todo',todoRoutes);
 
-app.listen(PORT,()=>{
-    console.log(`app is listening on ${PORT}`);
+app.listen(process.env.PORT,()=>{
+    console.log(`app is listening on ${process.env.PORT}`);
 })
